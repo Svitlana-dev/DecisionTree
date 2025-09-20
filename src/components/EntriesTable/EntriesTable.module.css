@@ -1,0 +1,62 @@
+.wrap {
+  width: 100%;
+}
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+th {
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: #6b7280;
+  padding: 8px 12px;
+}
+td {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-left: none;
+  border-right: none;
+  padding: 12px;
+  font-size: 16px;
+}
+tbody tr td:first-child {
+  border-left: 1px solid #e5e7eb;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+tbody tr td:last-child {
+  border-right: 1px solid #e5e7eb;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.empty {
+  text-align: center;
+  color: #6b7280;
+  padding: 24px;
+}
+.note {
+  white-space: pre-wrap;
+}
+
+.link {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+/* Червоний смітничок */
+.trashBtn {
+  background: transparent;
+  border: none;
+  color: #e63946;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: transform 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.trashBtn:hover {
+  color: #ff1a1a;
+  background: #fff1f1;
+  transform: scale(1.1);
+}

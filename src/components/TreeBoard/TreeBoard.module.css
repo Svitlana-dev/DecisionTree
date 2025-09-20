@@ -1,0 +1,54 @@
+.tree {
+  display: grid;
+  gap: 18px; /* вертикальні відступи між рядами */
+  margin-top: 8px;
+}
+
+/* Ряд рівня */
+.row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  min-height: 52px;
+  padding: 4px 0;
+}
+
+/* Ноди (чіпи) */
+.node {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  transition: transform 0.06s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.node:hover {
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+}
+.node:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* Активний вибраний елемент (підсвітка) */
+.active {
+  background: #f1f5f9; /* світло-сірий фон активного */
+  border-color: #e2e8f0;
+}
+
+/* Конектор: тонка вертикальна лінія від активного вузла цього рівня до наступного ряду.
+   Позиціонуємо за допомогою var(--anchor-x), яку задаємо інлайн зі SnakeBoard.jsx */
+.connector {
+  position: absolute;
+  left: var(--anchor-x, -100px);
+  top: calc(100% - 2px);
+  width: 2px;
+  height: 18px; /* довжина "гілки" вниз до наступного ряду */
+  background: #e5e7eb;
+  pointer-events: none;
+  content: "";
+}

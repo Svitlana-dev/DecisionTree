@@ -1,0 +1,18 @@
+.crumbs {
+  color: #64748b;
+  margin: 6px 0 10px;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  padding: 0 6px;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  color: inherit;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  color: #0f172a;
+}

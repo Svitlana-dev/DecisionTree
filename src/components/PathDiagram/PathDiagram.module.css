@@ -1,0 +1,99 @@
+.diagram {
+  position: relative; /* потрібно для SVG шару */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* SVG-лінії */
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.lines line {
+  stroke: #64748b; /* сірі лінії */
+  stroke-width: 2;
+  opacity: 0.9;
+}
+
+/* Крихти зверху */
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.bc {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d8e5;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+  cursor: pointer;
+}
+.bc:hover {
+  background: #f8fafc;
+}
+.bcMuted {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* Блок рівня */
+.levelBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+/* Неклікабельний заголовок */
+.levelTitle {
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: #eef5ff;
+  border: 1px dashed #9cc0ff;
+  color: #183153;
+  font-weight: 600;
+}
+
+/* Ряд вузлів */
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Вузол */
+.node {
+  padding: 14px 22px; /* більше внутрішніх відступів */
+  border-radius: 16px;
+  border: 2px solid #1f2937;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+
+  font-size: 16px; /* збільшений шрифт */
+  font-weight: 500; /* трохи жирніший для кращої читабельності */
+  min-width: 80px; /* щоб усі виглядали рівномірно */
+  text-align: center;
+}
+.node:hover {
+  transform: translateY(-1px);
+}
+.active {
+  border-color: #60a5fa;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.22);
+}
+
+/* Порожній ряд */
+.empty {
+  color: #94a3b8;
+  font-style: italic;
+}
