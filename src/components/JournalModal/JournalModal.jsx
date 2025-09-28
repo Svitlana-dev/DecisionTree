@@ -13,7 +13,7 @@ export default function JournalModal({
     <div className={css.overlay}>
       <div className={css.modal}>
         <div className={css.head}>
-          <h2>Повний журнал</h2>
+          <h2>Журнал</h2>
           <div className={css.headActions}>
             <button onClick={onDeleteAll}>Очистити</button>
             <button onClick={onClose}>Закрити</button>

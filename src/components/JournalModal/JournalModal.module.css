@@ -7,6 +7,9 @@
   justify-content: center;
   padding: 20px;
   z-index: 1000;
+  background: rgba(2, 6, 23, 0.35);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 .modal {

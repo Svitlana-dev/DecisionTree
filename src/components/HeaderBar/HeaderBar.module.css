@@ -1,0 +1,182 @@
+/* Базовий хедер на всю ширину */
+.header {
+  position: sticky; /* можна fixed, якщо хочеш завжди зверху */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #0f172a; /* темний */
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+}
+
+/* Внутрішній контейнер */
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  font-size: clamp(18px, 2.4vw, 28px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Десктопні дії (при 1024px+ показуємо; нижче ховаємо) */
+.actionsDesktop {
+  display: none;
+  gap: 10px;
+}
+
+.btn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0f172a;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+}
+.btn:hover {
+  background: rgb(239, 251, 255);
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.12);
+}
+
+.danger {
+  color: #0f172a;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+  background: #ef4444;
+  color: #fff;
+  border: none;
+}
+.danger:hover {
+  filter: brightness(1.05);
+}
+
+/* Бургер — видимий на моб/таб */
+.burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 42px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+.burger span {
+  height: 2px;
+  width: 22px;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Мобільне меню */
+.menu {
+  position: fixed;
+  top: 56px; /* висота хедера (підлаштуй за потреби) */
+  left: 0;
+  right: 0;
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  padding: 10px 12px 16px;
+  display: grid;
+  gap: 10px;
+  z-index: 49;
+}
+.menuOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 1; /* нижче за меню, вище за контент */
+}
+
+.menuItem {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.menuItem:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.menuDanger {
+  background: #ef4444;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+.menuDanger:hover {
+  filter: brightness(1.05);
+}
+
+/* ————— БРЕЙКПОІНТИ ————— */
+
+/* Мобілка: від 320px (нічого спеціального — меню за замовчуванням) */
+@media (min-width: 320px) {
+  .menuItem {
+    font-size: 15px;
+  }
+}
+
+/* Планшет: від 768px — теж бургер, лише трохи просторіше */
+@media (min-width: 768px) {
+  .inner {
+    padding: 12px 20px;
+  }
+  .menu {
+    top: 64px;
+    padding: 12px 16px 18px;
+  }
+}
+
+/* Десктоп: від 1024px — показуємо кнопки, ховаємо бургер і меню */
+@media (min-width: 1024px) {
+  .actionsDesktop {
+    display: inline-flex;
+  }
+  .burger {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+}
